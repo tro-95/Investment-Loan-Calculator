@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="Calc.js"> </script>
+  <script type="text/javascript" src="funcs.js"> </script>
+</head>
+
+<body>
+  <div class="container" id="title"><h3> Investment Calculator </h3></div>
+
+  <div class="container" id="form">
+    This site requires Javascript to work, please enable Javascript in your browser or use a browser with Javascript support.
+  </div>
+
+  <div class="container" id="result">
+
+  </div>
+
+  <script type="text/javascript">
+
+    const loan_text = Array("Loan amount",
+    "Interest rate%",
+    "Number of annual payments",
+    "Number of years",
+    "Additional financial costs",
+    "Average inflation rate%");
+
+    const loan_ids = Array("loan_value", "interest_rate", "n_payments", "n_years", "additional", "inflation_rate");
+
+    const loan_small = Array("The amount of borrowed funds.",
+    "Interest rate of the loan.",
+    "Number of annual payments.",
+    "Number of years for the loan repayment, <a id='switch' href='#' onclick='switch_form(0);return false;'>switch to investment calculator.</a>",
+    "Additional financial costs linked to operative funds.",
+    "Average inflation rate for the loan repayment period.");
+
+    const loan_func = 'loan_calc';
+
+    const investment_text = Array("Starting capital",
+    "Debt capital",
+    "Time periods",
+    "Average interest rate%",
+    "Average attended net income",
+    "Amortization rate%");
+
+    const investment_ids = Array('starting_capital', 'debt_capital', 'time_period', 'cost_of_capital', 'attended_income', 'amortization_rate');
+
+    const investment_small = Array("The cost of the investement.",
+    "The amount of borrowed funds for the investment.",
+    "Considered time for the repayment expressed in n. time units, ex. years.",
+    "Average interest rate (in %) for the debt capital, <a id='switch' href='#' onclick='switch_form(1);return false;'>switch to loan calculator.</a>.",
+    "Average net income at every time-period, without financial outflows.",
+    "Total amortization rate (in %), at the end of the considered time.");
+
+    const investment_func = 'investment_calc';
+
+    window.addEventListener("load", switch_form);
+
+    function switch_form(s){
+      if(isNaN(s)){ s = parseInt(sessionStorage.getItem("form_type")); }
+      //console.log(s);
+      switch(s){
+        case 0:
+        change_form("Investment calculator", investment_text, investment_ids, investment_small, investment_func, '#003366', '#007BFF', '#FFFFFF', '#CCA43D');
+        sessionStorage.setItem("form_type", 0);
+        break;
+        case 1:
+        change_form("Loan calculator", loan_text, loan_ids, loan_small, loan_func, '#D0DEC3', '#1ABC9C', '#34495E', '#CC4F39');
+        sessionStorage.setItem("form_type", 1);
+        break;
+        default:
+        change_form("Investment calculator", investment_text, investment_ids, investment_small, investment_func, '#003366', '#007BFF', '#FFFFFF', '#CCA43D');
+        break;
+      }
+    }
+
+
+  </script>
+
+</body>
+</html>

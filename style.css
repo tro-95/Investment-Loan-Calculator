@@ -1,0 +1,85 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="text"] {
+  background-color: #FFFFFF;
+  border: 1px solid #D3D3D3;
+  padding: 2px;
+  border-radius: 5px;
+  width: 7vw;
+  text-align: right;
+}
+
+input[type="button"] {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus {
+  border-color: #007BFF; /* Highlight border on focus */
+}
+
+small{
+  font-size: 11px;
+  font-style: oblique;
+  line-height: 2vh;
+}
+
+.container{
+  position: absolute;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  left: 25vw;
+  right: 10vw;
+  margin-bottom: 5vh;
+}
+
+.container table{
+  width: 50vw;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.container table td, table th{
+  border: 1px solid #F4F4F4;
+}
+
+#form{
+  top: 10vh;
+  line-height: 3vh;
+}
+
+#form input{
+  position: relative;
+  float: right;
+  margin-right: 50%;
+}
+
+#result{
+  position: absolute;
+  top: 80vh;
+  font-size: 14px;
+  line-height: 3vh;
+  height: auto;
+  margin-bottom: 20vh;
+}
+
+#result #npv_periods{
+  display: none;
+  font-style: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 11px;
+  line-height: 2vh;
+}
+
+#result #collapsible{
+  background-color: #F4F4F4;
+  color: #007BFF;
+  border: 2px solid #007BFF;
+  padding: 5px;
+  text-align: center;
+  font-size: 11px;
+}
