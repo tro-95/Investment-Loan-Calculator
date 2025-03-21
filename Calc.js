@@ -258,6 +258,8 @@ class LCalc{
 
     r["average_interest_rate"] = Math.round((average_int + Number.EPSILON) * 100) / 100;
     r["average_net_interest_rate"] = Math.round((average_net_int + Number.EPSILON) * 100) / 100;
+    r["average_amortized_interest_rate"] = Math.round((average_amortized_int + Number.EPSILON) * 100) / 100;
+    r["average_amortized_net_interest_rate"] = Math.round((average_amortized_net_int + Number.EPSILON) * 100) / 100;
 
     r["highest_interest"] = Math.round((h + Number.EPSILON) * 10) / 10;
     r["lowest_interest"] = Math.round((l + Number.EPSILON) * 10) / 10;
@@ -268,6 +270,8 @@ class LCalc{
     r["average_interest_rate_adjusted"] = Math.round(((average_int - this.inflation) + Number.EPSILON) * 100) / 100;
     r["average_net_interest_rate_adjusted"] = Math.round(((average_net_int - this.inflation) + Number.EPSILON) * 100) / 100;
     r["amortized_net_interest_rate_adjusted"] = Math.round(((real_amortized_net_int - this.inflation) + Number.EPSILON) * 100) / 100;
+    r["average_amortized_interest_rate_adjusted"] = Math.round(((average_amortized_int - this.inflation) + Number.EPSILON) * 100) / 100;
+    r["average_amortized_net_interest_rate_adjusted"] = Math.round(((average_amortized_net_int - this.inflation) + Number.EPSILON) * 100) / 100;
     console.log(r["control_interest_rate"]);
     return r;
   }
